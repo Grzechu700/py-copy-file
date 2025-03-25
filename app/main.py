@@ -12,9 +12,9 @@ def copy_file(command: str) -> None:
         return
 
     try:
-        with (open(src_file_name, "r") as file_in,
-              open(dest_file_name, "w") as file_out):
-            file_out.write(file_in.read())
+        with (open(src_file_name, "r") as input_file,
+              open(dest_file_name, "w") as output_file):
+            output_file.write(input_file.read())
     except FileNotFoundError:
         print(f"File {src_file_name} not found.")
     except Exception as e:
